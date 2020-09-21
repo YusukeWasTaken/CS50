@@ -1,1 +1,1 @@
-CS50
+CS50x Online Course
