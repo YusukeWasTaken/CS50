@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <body class = "main">
+        <h1 class="ml15 shader">
+            <span class="word">CS</span>
+            <span class="word">50</span>
+        </h1>
+    
+        <h2 class="ml12 shader">Final Project</h2>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        
+        <script>
+            // Wrap every letter in a span
+            var textWrapper = document.querySelector('.ml12');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            
+            anime.timeline({loop: false})
+            .add({
+                targets: '.ml12 .letter',
+                translateX: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 1500 + 30 * i
+            })
+            anime.timeline({loop: false})
+                .add({
+                    targets: '.ml15 .word',
+                    scale: [14,1],
+                    opacity: [0,1],
+                    easing: "easeOutCirc",
+                    duration: 800,
+                    delay: (el, i) => 800 * i
+                })
+        </script>
+        <a class="image w3-animate-opacity" href="https://cs50.harvard.edu/x/2020/"></a>
+    </body>
+{% endblock %}

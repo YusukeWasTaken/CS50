@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Steam
+{% endblock %}
+
+{% block main %}
+    <body class = "steam">
+        <form action="/steam" method="post">
+            <div class="form-group">
+                <label class="form-control-label shadow label" for="steam">Steam</label>
+                <input autocomplete="off" autofocus class="form-control" name="steam" placeholder="Your steam link" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </body>
+{% endblock %}

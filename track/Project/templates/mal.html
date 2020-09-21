@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    MyAnimeList
+{% endblock %}
+
+{% block main %}
+    <body class = "mal">
+        <form action="/mal" method="post">
+            <div class="form-group">
+                <label class="form-control-label shadow label" for="mal">MyAnimeList</label>
+                <input autocomplete="off" autofocus class="form-control" name="mal" placeholder="Your MAL link" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </body>
+{% endblock %}

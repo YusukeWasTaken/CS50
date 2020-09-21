@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>My Webpage</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">    
+        <script>
+            function textcheck()
+            {
+                let h1 = document.querySelector("#Home");
+                if (h1.style.visibility === "hidden")
+                    return 1;
+                else
+                    return 0;
+            }
+            function blink()
+            {
+                if (textcheck() === 1)
+                {
+                    h1.style.visibility = "visible"
+                }
+                else
+                {
+                    h1.style.visibility = "hidden";
+                }
+            }
+            function rngcolor()
+            {
+                let r = Math.round(Math.random() * 255).toString();
+                let g = Math.round(Math.random() * 255).toString();
+                let b = Math.round(Math.random() * 255).toString(); 
+                let rgb = (r,g,b);
+                return "rgb("+ r + "," + g + "," + b + ")";
+            }
+            function BgColor()
+            {
+                let body = document.querySelector("body");
+                body.style.backgroundColor = rngcolor(body)
+            }
+            function TxTColor()
+            {
+                let h1 = document.querySelector("#Home");
+                h1.style.color = rngcolor(h1)
+            }
+            function reset()
+            {
+                counter = 0
+                audio.pause()
+                h2.style.visibility = "hidden"
+                clearInterval(StopBlink)
+                clearInterval(StopBgColor)
+                clearInterval(StopTxTColor)
+                if (textcheck() === 1)
+                {
+                    h1.style.visibility = "visible"
+                }
+                h1.style.color = "black"
+            }
+            //Run the function every 150ms
+            
+        </script>   
+    </head>
+    <body>
+            <h1 class = "titles center" id ="Home"><b>HOMEPAGE</b></h1>
+            <h2 style ="visibility: hidden;"><img class = "centered" src="vibecat.gif" alt="Just vaibin"> </h2>
+                <audio id ="scatman" controls autoplay loop style = "visibility: hidden;">
+                    <source src="scatman.mp3" type="audio/mpeg">
+                </audio>
+            <button type="button" class="btn btn-dark" id="Dark" style="position: absolute; top: 0px; right: 0px;">Dark</button>
+            <button type="button" class="btn btn-light" id="Light" style="position: absolute; top: 0px; right: 60px;">Light</button>
+            <button type="button" class="btn btn-danger" id="Dunk" style="position: absolute; top: 0px; right: 123px">Dunk Mode</button>
+            <script>
+
+                let body = document.querySelector("body");
+                let h2 = document.querySelector("h2");
+                let h1 = document.querySelector("#Home");
+                let StopBlink;
+                let counter = 0
+                let audio = document.getElementById("scatman")
+                audio.pause()
+                document.querySelector("#Dunk").onclick = function ()
+                {   
+                    if (counter === 0)
+                    {
+                        StopBlink = window.setInterval(blink, 250)
+                        StopBgColor = window.setInterval(BgColor,250)
+                        StopTxTColor = window.setInterval(TxTColor, 250)
+                        h2.style.visibility = "visible"
+                        audio.currentTime = 0
+                        audio.play()
+                    }   
+                    counter++;
+                }
+                document.querySelector("#Light").onclick = function ()
+                {
+                    body.style.backgroundColor = "White"
+                    reset()
+                    h1.style.color = "black"
+                }
+                document.querySelector("#Dark").onclick = function ()
+                {
+                    body.style.backgroundColor = "Gray"
+                    reset()
+                }
+            </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            alert("Hello!")
+        </script>
+    </head>
+    <body>
+        <h1 class ="center";style="color:grey;"> Random Images </h1>
+            <p class = "center">
+                <img src="https://media4.s-nbcnews.com/j/MSNBC/Components/Video/201609/a_ov_Pepe_160928.focal-760x428.jpg" alt="Big Pepe" width="800" height="500">
+            </p>
+        <h2 class ="center"> Top Tier Content </h2>
+            <p >
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Super Secret Info </a>
+            </p>
+            
+            <audio controls>
+                <source src="oof.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio> 
+        <h3 class = "center">Google Search</h3> 
+            <form action="https://www.google.com/search" method = "get" class = "center">
+                <input name = "q" type="text">
+                <input type="submit" value ="Submit Form">
+            </form>
+            <button type="button" class="btn btn-primary">Primary</button>
+    </body>
+</html> -->
+
+ */

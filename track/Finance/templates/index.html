@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <div class="form-group">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Stock Symbol</th>
+                    <th>Stock Name</th>
+                    <th>Share Price</th>
+                    <th>Share Quantity</th>
+                    <th>Total Ammount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in portfolio %}
+                <tr>
+                    <td>{{x["symbol"]}}</td>
+                    <td>{{x["name"]}}</td>
+                    <td>{{x["price"]}}</td>
+                    <td>{{x["shares"]}}</td>
+                    <td>{{x["spent"]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><b>Cash</b></td>
+                    <td colspan="3"></td>
+                    <td>{{cash}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    <td>{{total}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock %}

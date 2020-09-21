@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="get">
+        <div class="form-group">
+            <span>A share of {{stock["name"]}} ({{stock["symbol"]}}) costs ${{stock["price"]}} </span>
+        </div>
+    </form>
+{% endblock %}

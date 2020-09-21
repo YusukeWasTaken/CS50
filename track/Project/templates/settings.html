@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <body class = "settings">
+        <form action="/settings" method="post">
+            <h1 class ="headers">Security</h1>
+                <div class="form-group">
+                    <label class="form-control-label shadow label" for="cpassword">Current Password</label>
+                    <input autocomplete="off" autofocus class="form-control" name="cpassword" placeholder="Your current password" type="password">
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label shadow label" for="npassword">New Password</label>
+                    <input autocomplete="off" autofocus class="form-control" name="npassword" placeholder="Your new password" type="password">
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label shadow label" for="confirmation">Confirmation</label>
+                    <input autocomplete="off" autofocus class="form-control" name="confirmation" placeholder="Your new password" type="password">
+                </div>
+            <h2 class="headers" style = "margin-top: 35px;">Links</h2>
+                <div class="form-group">
+                    <label class="form-control-label shadow label" for="mal">MAL</label>
+                    <input value="{{ mal }}" autocomplete="off" autofocus class="form-control" name="mal" placeholder="Your MAL link" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label shadow label" for="imdb">ImdB</label>
+                    <input value="{{ imdb }}" autocomplete="off" autofocus class="form-control" name="imdb" placeholder="Your ImdB link" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label shadow label" for="steam">Steam</label>
+                    <input value="{{ steam }}" autocomplete="off" autofocus class="form-control" name="steam" placeholder="Your Steam link" type="text">
+                </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </body>
+{% endblock %}

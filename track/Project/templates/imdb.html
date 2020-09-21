@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    imdB
+{% endblock %}
+
+{% block main %}
+    <body class = "imdb">
+        <form action="/imdb" method="post">
+            <div class="form-group">
+                <label class="form-control-label shadow label" for="imdb">Imdb</label>
+                <input autocomplete="off" autofocus class="form-control" name="imdb" placeholder="Your imdB link" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </body>
+{% endblock %}

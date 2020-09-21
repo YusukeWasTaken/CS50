@@ -1,0 +1,25 @@
+.center
+{
+    text-align: center;
+}
+.titles
+{
+    font-family: "Comic Sans MS", cursive;
+    font-size: 38px;
+}
+.centered
+{
+    position: fixed;
+    top: 20%;
+    left: 45%;
+    margin-top: -50px;
+    margin-left: -100px;
+    width: 600px;
+    height: auto;
+}
+.player
+{
+    position: fixed;
+    top: 96%;
+    left: 87%;
+}
